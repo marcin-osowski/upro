@@ -1,11 +1,11 @@
 ### UPRO
-UPRO is a leveraged ETF that promises 3x daily returns
-of S\&P 500. Details: http://etf.com/UPRO
+`UPRO` is a leveraged ETF that promises 3x daily returns
+of `S\&P 500`. Details: http://etf.com/UPRO, 
+[fund's prospectus](http://google.com/search?q=UPRO+prospectus).
 
 ### Non-purpose of this repository
-Be of any financial advice. Don't buy UPRO if you cannot stomach 100% losses.
-It can literally go to zero in a single day - from the
-[fund's prospectus](http://google.com/search?q=UPRO+prospectus):
+Be of any financial advice. Don't buy `UPRO` if you cannot stomach 100% losses.
+It can literally go to zero in a single day - from the fund's prospectus:
 
 ```
 > For example, because the Fund includes a multiplier of three times
@@ -18,8 +18,22 @@ It can literally go to zero in a single day - from the
 ```
 
 ### Purpose of this repository
-See what has really happened to UPRO between June 2009
+See what has really happened to `UPRO` between June 2009
 and April 2019 - how well it has been tracking it's target,
 what's the deviation from the target and how can one predict
 future deviation.
 
+### UPRO's stated target
+From the fund's prospectus:
+```
+> ProShares UltraPro S&P500 (the “Fund”) seeks daily investment
+> results, before fees and expenses, that correspond to three times
+> (3x) the return of the S&P 500® Index (the “Index”) for a single
+> day, not for any other period. A “single day” is measured from the
+> time the Fund calculates its net asset value (“NAV”) to the time of
+> the Fund’s next NAV calculation.
+```
+
+As I understand the NAV is calculated after every trading day. To assess
+the performance of `UPRO` I'll compare it to 3x daily `SPY` price changes,
+from previous closing price to next closing price.
