@@ -38,9 +38,18 @@ As I understand the NAV is calculated after every trading day. To assess
 the performance of `UPRO` I'll compare it to compounded 3x daily `SPY`
 price changes, from previous closing price to next closing price.
 
+Let's call this "ideal" 3x daily `SPY` fund as `SPY3X`. On every market
+closing the `SPY3X` has exactly 3x the percentage change of `SPY`. For example,
+suppose that on day 1 `SPY` closes at 100.00, and `SPY3X` closes at 200.00.
+On day 2 `SPY` closes at 102.50 (which means it had a 2.5% daily change), then
+`SPY3X` must have closed at 215.00 (which means it had a 7.5% daily change).
+
 ### Handling of dividends
-Dividends need to be included for `UPRO`, but also for `SPY` when constructing
-the "ideal" daily 3x SPY benchmark. Otherwise the comparison is unfair,
-it makes it look like `UPRO` delivers higher results than the "ideal", cost-free
-and interest-rate-free daily 3x SPY benchmark:
+Dividends need to be included for `SPY` when constructing
+`SPY3X`. Otherwise the comparison is unfair, it makes it look like `UPRO`
+delivers higher results than `SPY3X`, which is a cost-free and
+an interest-rate-free version of `UPRO`.
 #### TODO: insert a PNG with the chart. 
+
+Dividends are included by boosting the closing price of the security
+by the dividend value (making it equivalent to full dividend reinvestment).
