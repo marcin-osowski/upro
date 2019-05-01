@@ -3,12 +3,24 @@
 import csv
 
 
-def get_security_csv_data(fname):
+def get_security_csv_data(security):
+    # Get dividend data
+    dividends = dict()
+    with open("%s_dividends.csv" % security) as f:
+       reader = csv.DictReader(f)
+       for row in reader:
+           date = row["Date"]
+           div = row["Dividends"]
+           dividends[date] = div 
+
+    # Get basic price data, merge with dividends
     rows = []
-    with open(fname) as f:
+    with open("%s.csv" % security) as f:
         reader = csv.DictReader(f)
         for row in reader:
-            assert "Date" in row
+            date = row["Date"]
+            if date in dividends:
+                row["Dividends"] = dividends[date]
             assert "Close" in row
             rows.append(row)
 
@@ -18,11 +30,11 @@ def get_security_csv_data(fname):
 
 
 def get_spy_rows():
-    return get_security_csv_data("SPY.csv")
+    return get_security_csv_data("SPY")
 
 
 def get_upro_rows():
-    return get_security_csv_data("UPRO.csv")
+    return get_security_csv_data("UPRO")
 
 
 def gain(current, prev):
@@ -48,7 +60,8 @@ cumulative_upro = 1.0
 cumulative_ideal_upro = 1.0
 
 print ("Date,SPY_pcent_gain,UPRO_pcent_gain,ideal_UPRO_pcent_gain,"
-       "SPY_cumulative_gain,UPRO_cumulative_gain,ideal_UPRO_cumulative_gain")
+       "SPY_cumulative_gain,UPRO_cumulative_gain,ideal_UPRO_cumulative_gain,"
+       "UPRO_over_ideal_UPRO_cumulative")
 
 while spy_rownum < len(spy_rows) and upro_rownum < len(upro_rows):
     spy_row = spy_rows[spy_rownum]
@@ -67,10 +80,22 @@ while spy_rownum < len(spy_rows) and upro_rownum < len(upro_rows):
     # Streams are synced.
 
     if streams_synced_for >= 1:
-        prev_spy_row = spy_rows[spy_rownum - 1]
-        prev_upro_row = upro_rows[upro_rownum - 1]
-        spy_gain = gain(spy_row["Close"], prev_spy_row["Close"])
-        upro_gain = gain(upro_row["Close"], prev_upro_row["Close"])
+        prev_spy_price = spy_rows[spy_rownum - 1]["Close"]
+        prev_upro_price = upro_rows[upro_rownum - 1]["Close"]
+        spy_price = float(spy_row["Close"])
+        upro_price = float(upro_row["Close"])
+
+        # Correct for dividends, but only if we've just received it.
+        # Further rows will go without dividend as we're only aggregating
+        # daily multiplicative changes. This has the effect of always keeping
+        # the dividend re-invested.
+        if "Dividends" in spy_row:
+            spy_price += float(spy_row["Dividends"])
+        if "Dividends" in upro_row:
+            upro_price += float(upro_row["Dividends"])
+
+        spy_gain = gain(spy_price, prev_spy_price)
+        upro_gain = gain(upro_price, prev_upro_price)
         spy_pcent = percentage_from_gain(spy_gain)
         upro_pcent = percentage_from_gain(upro_gain)
         ideal_upro_pcent = spy_pcent * 3.0
@@ -78,10 +103,12 @@ while spy_rownum < len(spy_rows) and upro_rownum < len(upro_rows):
         cumulative_spy *= spy_gain
         cumulative_upro *= upro_gain
         cumulative_ideal_upro *= ideal_upro_gain
+        cumulative_upro_vs_ideal_upro = cumulative_upro / cumulative_ideal_upro
 
-        print "%s,%f,%f,%f,%f,%f,%f" % (
+        print "%s,%f,%f,%f,%f,%f,%f,%f" % (
             spy_row["Date"], spy_pcent, upro_pcent, ideal_upro_pcent,
-            cumulative_spy, cumulative_upro, cumulative_ideal_upro)
+            cumulative_spy, cumulative_upro, cumulative_ideal_upro,
+            cumulative_upro_vs_ideal_upro)
 
     spy_rownum += 1
     upro_rownum += 1
