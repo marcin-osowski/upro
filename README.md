@@ -4,7 +4,8 @@ of S\&P 500. Details: http://etf.com/UPRO
 
 ### Non-purpose of this repository
 Be of any financial advice. Don't buy UPRO if you cannot stomach 100% losses.
-It can literally go to zero in a single day - from the fund's prospectus:
+It can literally go to zero in a single day - from the
+[fund's prospectus](http://google.com/search?q=UPRO+prospectus):
 
 ```
 > For example, because the Fund includes a multiplier of three times
