@@ -40,7 +40,7 @@ price changes, from previous closing price to next closing price.
 
 ### Handling of dividends
 Dividends need to be included for `UPRO`, but also for `SPY` when constructing
-the "ideal" daily 3x SPY benchmark. Otherwise it seems that `UPRO` delivers
-lower results than the "ideal" daily 3x SPY benchmark:
-
+the "ideal" daily 3x SPY benchmark. Otherwise the comparison is unfair,
+it makes it look like `UPRO` delivers higher results than the "ideal", cost-free
+and interest-rate-free daily 3x SPY benchmark:
 #### TODO: insert a PNG with the chart. 
