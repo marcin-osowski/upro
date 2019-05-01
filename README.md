@@ -1,7 +1,7 @@
 ### UPRO
 `UPRO` is a leveraged ETF that promises 3x daily returns
-of `S\&P 500`. Details: http://etf.com/UPRO, 
-[fund's prospectus](http://google.com/search?q=UPRO+prospectus).
+of `S&P 500`. Details: http://etf.com/UPRO, 
+[fund's prospectus](https://www.proshares.com/funds/prospectus.html?ticker=UPRO).
 
 ### Non-purpose of this repository
 Be of any financial advice. Don't buy `UPRO` if you cannot stomach 100% losses.
@@ -35,5 +35,12 @@ From the fund's prospectus:
 ```
 
 As I understand the NAV is calculated after every trading day. To assess
-the performance of `UPRO` I'll compare it to 3x daily `SPY` price changes,
-from previous closing price to next closing price.
+the performance of `UPRO` I'll compare it to compounded 3x daily `SPY`
+price changes, from previous closing price to next closing price.
+
+### Handling of dividends
+Dividends need to be included for `UPRO`, but also for `SPY` when constructing
+the "ideal" daily 3x SPY benchmark. Otherwise it seems that `UPRO` delivers
+lower results than the "ideal" daily 3x SPY benchmark:
+
+#### TODO: insert a PNG with the chart. 
