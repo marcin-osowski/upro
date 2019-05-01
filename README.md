@@ -8,12 +8,12 @@ It can literally go to zero in a single day - from the fund's prospectus:
 
 ```
 > For example, because the Fund includes a multiplier of three times
-> (3x) the Index, a single day movementin the Index approaching
-> 33% at any point in the day could result in the total loss of an
-> investor’s investment if that movement is contrary to the
-> investment objective of the Fund, even if the Index subsequently
-> moves in an opposite direction, eliminating all or a
-> portion of the earlier movement. 
+> (3x) the Index, a single day movement in the Index approaching 33%
+> at any point in the day could result in the total loss of an
+> investor’s investment if that movement is contrary to the investment
+> objective of the Fund, even if the Index subsequently moves in
+> an opposite direction, eliminating all or a portion of the earlier
+> movement. 
 ```
 
 ### Purpose of this repository
