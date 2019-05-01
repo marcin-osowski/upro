@@ -6,7 +6,7 @@ import csv
 def get_security_csv_data(security):
     # Get dividend data
     dividends = dict()
-    with open("%s_dividends.csv" % security) as f:
+    with open("inputs/%s_dividends.csv" % security) as f:
        reader = csv.DictReader(f)
        for row in reader:
            date = row["Date"]
@@ -15,7 +15,7 @@ def get_security_csv_data(security):
 
     # Get basic price data, merge with dividends
     rows = []
-    with open("%s.csv" % security) as f:
+    with open("inputs/%s.csv" % security) as f:
         reader = csv.DictReader(f)
         for row in reader:
             date = row["Date"]
