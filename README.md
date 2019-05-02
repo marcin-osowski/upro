@@ -1,3 +1,5 @@
+TODO: make all plots in the same size ...
+
 ### UPRO
 `UPRO` is a leveraged ETF that promises 3x daily returns
 of `S&P 500`. Details: http://etf.com/UPRO, 
