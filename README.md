@@ -45,10 +45,11 @@ On day 2 `SPY` closes at 102.50 (which means it had a 2.5% daily change), then
 `SPY3X` must have closed at 215.00 (which means it had a 7.5% daily change).
 
 ### Handling of dividends
-Dividends need to be included for `SPY` when constructing
-`SPY3X`. Otherwise the comparison is unfair, it makes it look like `UPRO`
-delivers higher results than `SPY3X`, which is a cost-free and
-an interest-rate-free version of `UPRO`.
+Dividends of day n need to be added to the closing price of `SPY` when
+constructing `SPY3X`. Otherwise the comparison is unfair, it makes it
+look like `UPRO` delivers higher results than `SPY3X`, which is
+a cost-free and an interest-rate-free version of `UPRO`.
+![UPRO vs SPY3X, without dividends](img/upro_spy3x_no_dividends.png)
 #### TODO: insert a PNG with the chart. 
 
 Dividends are included by boosting the closing price of the security
