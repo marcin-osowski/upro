@@ -59,7 +59,7 @@ cumulative_spy = 1.0
 cumulative_upro = 1.0
 cumulative_spy3x = 1.0
 
-print ("Date,SPY_pcent_gain,UPRO_pcent_gain,SPY3X_pcent_gain,"
+print ("Date,SPY_daily_pcent_gain,UPRO_daily_pcent_gain,SPY3X_daily_pcent_gain,"
        "SPY_cumulative_gain,UPRO_cumulative_gain,SPY3X_cumulative_gain,"
        "UPRO_over_SPY3X_cumulative")
 

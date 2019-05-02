@@ -1,4 +1,4 @@
-Date,SPY_pcent_gain,UPRO_pcent_gain,SPY3X_pcent_gain,SPY_cumulative_gain,UPRO_cumulative_gain,SPY3X_cumulative_gain,UPRO_over_SPY3X_cumulative
+Date,SPY_daily_pcent_gain,UPRO_daily_pcent_gain,SPY3X_daily_pcent_gain,SPY_cumulative_gain,UPRO_cumulative_gain,SPY3X_cumulative_gain,UPRO_over_SPY3X_cumulative
 2009-06-26,-0.260649,-0.518433,-0.781948,0.997394,0.994816,0.992181,1.002656
 2009-06-29,0.936412,2.837309,2.809237,1.006733,1.023042,1.020053,1.002930
 2009-06-30,-0.809062,-2.387392,-2.427185,0.998588,0.998618,0.995295,1.003339
