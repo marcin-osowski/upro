@@ -49,9 +49,11 @@ Dividends of a day need to be added to the closing price of `SPY` when
 constructing `SPY3X`. Otherwise the comparison is unfair, it makes it
 look like `UPRO` delivers higher results than `SPY3X`, which is
 a cost-free and an interest-rate-free version of `UPRO`.
+
 ![UPRO vs SPY3X, without dividends](img/upro_spy3x_no_dividends.png)
 
 It becomes more clear when we divide `UPRO` price by `SPY3X` price
 (again, without dividends):
+
 ![UPRO over SPY3X, without dividends](img/upro_over_spy3x_no_dividends.png)
 
