@@ -57,3 +57,10 @@ It becomes more clear when we divide `UPRO` price by `SPY3X` price
 
 ![UPRO over SPY3X, without dividends](img/upro_over_spy3x_no_dividends.png)
 
+### Divergence between UPRO and SPY3X
+Both funds have very similar performance, although over the analyzed period
+`UPRO` delivered only slightly below 80% of the returns of (virtual) `SPY3X`:
+
+![UPRO vs SPY3X](img/upro_spy3x.png)
+
+![UPRO over SPY3X](img/upro_over_spy3x.png)
