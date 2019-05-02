@@ -57,11 +57,11 @@ upro_rownum = 0
 streams_synced_for = 0
 cumulative_spy = 1.0
 cumulative_upro = 1.0
-cumulative_ideal_upro = 1.0
+cumulative_spy3x = 1.0
 
-print ("Date,SPY_pcent_gain,UPRO_pcent_gain,ideal_UPRO_pcent_gain,"
-       "SPY_cumulative_gain,UPRO_cumulative_gain,ideal_UPRO_cumulative_gain,"
-       "UPRO_over_ideal_UPRO_cumulative")
+print ("Date,SPY_pcent_gain,UPRO_pcent_gain,SPY3X_pcent_gain,"
+       "SPY_cumulative_gain,UPRO_cumulative_gain,SPY3X_cumulative_gain,"
+       "UPRO_over_SPY3X_cumulative")
 
 while spy_rownum < len(spy_rows) and upro_rownum < len(upro_rows):
     spy_row = spy_rows[spy_rownum]
@@ -98,17 +98,17 @@ while spy_rownum < len(spy_rows) and upro_rownum < len(upro_rows):
         upro_gain = gain(upro_price, prev_upro_price)
         spy_pcent = percentage_from_gain(spy_gain)
         upro_pcent = percentage_from_gain(upro_gain)
-        ideal_upro_pcent = spy_pcent * 3.0
-        ideal_upro_gain = gain_from_percentage(ideal_upro_pcent)
+        spy3x_pcent = spy_pcent * 3.0
+        spy3x_gain = gain_from_percentage(spy3x_pcent)
         cumulative_spy *= spy_gain
         cumulative_upro *= upro_gain
-        cumulative_ideal_upro *= ideal_upro_gain
-        cumulative_upro_vs_ideal_upro = cumulative_upro / cumulative_ideal_upro
+        cumulative_spy3x *= spy3x_gain
+        cumulative_upro_vs_spy3x = cumulative_upro / cumulative_spy3x
 
         print "%s,%f,%f,%f,%f,%f,%f,%f" % (
-            spy_row["Date"], spy_pcent, upro_pcent, ideal_upro_pcent,
-            cumulative_spy, cumulative_upro, cumulative_ideal_upro,
-            cumulative_upro_vs_ideal_upro)
+            spy_row["Date"], spy_pcent, upro_pcent, spy3x_pcent,
+            cumulative_spy, cumulative_upro, cumulative_spy3x,
+            cumulative_upro_vs_spy3x)
 
     spy_rownum += 1
     upro_rownum += 1
