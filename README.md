@@ -1,3 +1,6 @@
+TL;DR: Historically, `UPRO` costed about 2.24*interest rate + 1.58%
+(annualized) to hold. As of April 2019 this seems to be around 6% to 7%.
+
 # UPRO
 `UPRO` is a leveraged ETF that promises 3x daily returns
 of `S&P 500`. Details: http://etf.com/UPRO, 
@@ -87,17 +90,19 @@ here are
 ![3 month Treasuries](img/3month_tbill.png)
 
 The `UPRO`/`SPY3X` difference seems to be approximately explained
-by a linearly regressed formula:
+by this formula, which I got from running a linear regression between
+the above two time series:
 
-   - (3month tbill yield) * 2.24 + 1.58%
+```
+   (3month tbill yield) * 2.24 + 1.58%
+```
 
-The (2.24 * interest) part comes from the leverage. Apparently close to
-0.76x in `UPRO` is be achieved "naturally", by holding the index or stocks
+The (2.24 * yield) part comes from the leverage. Apparently close to
+0.76x in `UPRO` is achieved "naturally", by holding the index or stocks
 in the index, while the remaining 2.24x requires borrowing or other
 techniques which are equivalent to borrowing from net result point of view.
-1.58% seems to be the raw cost of the fund (stated as 0.92%)
+1.58% seems to be the cost of the fund (stated as 0.92%)
 plus the results of missing the stated objective.
 
 ![UPRO over SPY3X, annualized loss, with Tbill rates](img/annualized_upro_loss_and_tbill.png)
-
 
