@@ -79,3 +79,8 @@ To better understand the `UPRO`/`SPY3X` plot I've done two things:
 This is the result:
 
 ![UPRO over SPY3X, annualized loss](img/annualized_upro_loss.png)
+
+This is likely driven by the change in interest rates, for example
+here are yields on 3-month Treasury notes:
+
+![3 month Treasuries](img/3month_tbill.png)
