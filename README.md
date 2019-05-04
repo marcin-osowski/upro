@@ -92,7 +92,8 @@ cost comes from the leverage (1X can be achieved "naturally",
 the remaining 2x require borrowing or other techniques which
 are equivalent from net result point of view), while 1.5% seems to
 be the raw cost of the fund. This is higher than the stated expense
-ratio of 0.92%.
+ratio of 0.92%, but the fit is rather rough (I literally just typed
+these numbers and checked that "plots looks similar").
 
 ![UPRO over SPY3X, annualized loss, with Tbill rates](img/annualized_upro_loss_and_tbill.png)
 
