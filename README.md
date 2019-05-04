@@ -87,7 +87,8 @@ here are
 ![3 month Treasuries](img/3month_tbill.png)
 
 The `UPRO`/`SPY3X` difference seems to be approximately explained
-by a linearly regressed formula: (3month tbill yield) * 2.24 + 1.58%.
+by a linearly regressed formula:
+   - (3month tbill yield) * 2.24 + 1.58%
 The 2.24 * tbill part comes from the leverage. Apparently close to
 0.75X is be achieved "naturally", by holding the index or stocks
 in the index, while the remaining 2.24x requires borrowing or other
