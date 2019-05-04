@@ -1,5 +1,5 @@
 TL;DR: According to my amateurish and certainly wrong analysis,
-`UPRO` costed about 2.24*interest rate + 1.58% (annualized) to
+`UPRO` costed about 2.24*(3M tbill yield) + 1.58% (annualized) to
 hold, in the sense that this is how much it lags behind it's
 stated objective. As of April 2019 this seems to be around
 6% to 7%, annualized.
@@ -88,22 +88,24 @@ This is the result:
 
 This is likely driven by the change in interest rates (as the fund needs
 to borrow money to achieve leverage, or engage in things like
-total return swaps which have the end result). For example here are
+total return swaps which have the same end result). For example,
+here are
 [yields on 3-month Treasury notes](https://fred.stlouisfed.org/series/TB3MS):
 
 ![3 month Treasuries](img/3month_tbill.png)
 
 The `UPRO`/`SPY3X` difference seems to be approximately explained
 by this formula, which I got from running a linear regression between
-the above two time series:
+the above two time series (annualized `UPRO` loss vs `SPY3X` and
+3-month tbill yields):
 
 ```
    UPRO vs SPY3X annualized loss ~= (3month tbill yield) * 2.24 + 1.58%
 ```
 
-Part of the 1.58% is the cost of the fund (stated as 0.92%), the rest
-is likely the cost of leverage (plus, possibly, results of fund slightly
-missing its stated objective).
+Part of the 1.58% is the cost of the fund (stated as 0.92%). All the rest
+is likely the cost of leverage, plus possibly results of fund slightly
+missing its stated objective.
 
 Visually the regression fits okay:
 
