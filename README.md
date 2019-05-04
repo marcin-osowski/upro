@@ -91,13 +91,12 @@ by a linearly regressed formula:
 
    - (3month tbill yield) * 2.24 + 1.58%
 
-The 2.24 * tbill part comes from the leverage. Apparently close to
-0.75X is be achieved "naturally", by holding the index or stocks
+The (2.24 * interest) part comes from the leverage. Apparently close to
+0.76x in `UPRO` is be achieved "naturally", by holding the index or stocks
 in the index, while the remaining 2.24x requires borrowing or other
 techniques which are equivalent to borrowing from net result point of view.
-1.58% seems to be the raw cost of the fund / result of missing the
-stated objective. This is higher than the stated expense ratio of
-0.92%, but the fit is somewhat approximate.
+1.58% seems to be the raw cost of the fund (stated as 0.92%)
+plus the results of missing the stated objective.
 
 ![UPRO over SPY3X, annualized loss, with Tbill rates](img/annualized_upro_loss_and_tbill.png)
 
