@@ -1,13 +1,12 @@
-TODO: make all plots in the same size ...
-
-### UPRO
+# UPRO
 `UPRO` is a leveraged ETF that promises 3x daily returns
 of `S&P 500`. Details: http://etf.com/UPRO, 
 [fund's prospectus](https://www.proshares.com/funds/prospectus.html?ticker=UPRO).
 
 ### Non-purpose of this repository
-Be of any financial advice. Don't buy `UPRO` if you cannot stomach 100% losses.
-It can literally go to zero in a single day - from the fund's prospectus:
+Be of any financial advice. Don't buy `UPRO` if you cannot stomach
+100% losses.  It can literally go to zero in a single day - from
+the fund's prospectus:
 
 ```
 > For example, because the Fund includes a multiplier of three times
@@ -41,10 +40,11 @@ the performance of `UPRO` I'll compare it to compounded 3x daily `SPY`
 price changes, from previous closing price to next closing price.
 
 Let's call this "ideal" 3x daily `SPY` fund as `SPY3X`. On every market
-closing the `SPY3X` has exactly 3x the percentage change of `SPY`. For example,
-suppose that on day 1 `SPY` closes at 100.00, and `SPY3X` closes at 200.00.
-On day 2 `SPY` closes at 102.50 (which means it had a 2.5% daily change), then
-`SPY3X` must have closed at 215.00 (which means it had a 7.5% daily change).
+closing the `SPY3X` has exactly 3x the percentage change of `SPY`. For
+example, suppose that on day 1 `SPY` closes at 100.00, and `SPY3X`
+closes at 200.00; on day 2 `SPY` closes at 102.50 (which means it had
+a 2.5% daily change). Given all of that `SPY3X` must have closed at
+215.00 (which means it had a 7.5% daily change).
 
 ### Handling of dividends
 Dividends of a day need to be added to the closing price of `SPY` when
@@ -68,7 +68,14 @@ the (virtual) `SPY3X`:
 
 ![UPRO over SPY3X](img/upro_over_spy3x.png)
 
-To better understand the `UPRO`/`SPY3X` plot I've applied two tricks:
-  - I've replaced every point in the graph by a 2-weeks trailing
-    average
-  - TODO
+To better understand the `UPRO`/`SPY3X` plot I've done two things:
+  - I've replaced every point in the above graph by a 2-weeks moving
+    average (± 1 week around the point)
+  - I've computed the holding cost (as a multiplicative change in
+    the `UPRO`/`SPY3X` value) from 6 weeks before each day till
+    6 weeks after each day and annualized it. In other words, for
+    any given day, what was the annualized `UPRO` loss vs `SPY3X`,
+    as a percentage?
+This is the result:
+
+![UPRO over SPY3X, annualized loss](img/annualized_upro_loss.png)
