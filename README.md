@@ -97,7 +97,7 @@ by this formula, which I got from running a linear regression between
 the above two time series:
 
 ```
-   (3month tbill yield) * 2.24 + 1.58%
+   UPRO vs SPY3X annualized loss ~= (3month tbill yield) * 2.24 + 1.58%
 ```
 
 The (2.24 * yield) part comes from the leverage. Apparently close to
