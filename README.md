@@ -86,8 +86,9 @@ This is the result:
 
 ![UPRO over SPY3X, annualized loss](img/annualized_upro_loss.png)
 
-This is likely driven by the change in interest rates, for example
-here are
+This is likely driven by the change in interest rates (as the fund needs
+to borrow money to achieve leverage, or engage in things like
+total return swaps which have the end result). For example here are
 [yields on 3-month Treasury notes](https://fred.stlouisfed.org/series/TB3MS):
 
 ![3 month Treasuries](img/3month_tbill.png)
@@ -100,12 +101,11 @@ the above two time series:
    UPRO vs SPY3X annualized loss ~= (3month tbill yield) * 2.24 + 1.58%
 ```
 
-The (2.24 * yield) part comes from the leverage. Apparently close to
-0.76x in `UPRO` is achieved "naturally", by holding the index or stocks
-in the index, while the remaining 2.24x requires borrowing or other
-techniques which are equivalent to borrowing from net result point of view.
-1.58% seems to be the cost of the fund (stated as 0.92%)
-plus the results of missing the stated objective.
+Part of the 1.58% is the cost of the fund (stated as 0.92%), the rest
+is likely the cost of leverage (plus, possibly, results of fund slightly
+missing its stated objective).
+
+Visually the regression fits okay:
 
 ![UPRO over SPY3X, annualized loss, with Tbill rates](img/annualized_upro_loss_and_tbill.png)
 
