@@ -55,14 +55,20 @@ a cost-free and an interest-rate-free version of `UPRO`.
 ![UPRO vs SPY3X, without dividends](img/upro_spy3x_no_dividends.png)
 
 It becomes more clear when we divide `UPRO` price by `SPY3X` price
-(again, without dividends):
+(again, without dividends, which is what causes the "sawtooth"):
 
 ![UPRO over SPY3X, without dividends](img/upro_over_spy3x_no_dividends.png)
 
 ### Divergence between UPRO and SPY3X
 Both funds have very similar performance, although over the analyzed period
-`UPRO` delivered only slightly below 80% of the returns of (virtual) `SPY3X`:
+`UPRO` delivered only slightly below 80% of the returns of
+the (virtual) `SPY3X`:
 
 ![UPRO vs SPY3X](img/upro_spy3x.png)
 
 ![UPRO over SPY3X](img/upro_over_spy3x.png)
+
+To better understand the `UPRO`/`SPY3X` plot I've applied two tricks:
+  - I've replaced every point in the graph by a 2-weeks trailing
+    average
+  - TODO
