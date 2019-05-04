@@ -84,3 +84,8 @@ This is likely driven by the change in interest rates, for example
 here are yields on 3-month Treasury notes:
 
 ![3 month Treasuries](img/3month_tbill.png)
+
+The `UPRO`/`SPY3X` difference seems to be explained by a hand-fit formula,
+(3M tbill yield * 2) + 1.5%:
+
+[!UPRO over SPY3X, annualized loss, with Tbill rates](img/annualized_upro_loss_and_tbill.png)
