@@ -1,8 +1,8 @@
-TL;DR: Historically, `UPRO` costed about 2.24*interest rate + 1.58%
-(annualized) to hold, in the sense that this is how much it lags
-behind it's stated objective. As of April 2019 this seems to be
-around 6% to 7%. Since fund's inception in June 2009 this resulted
-in ~20% loss vs stated objective.
+TL;DR: According to my amateurish and certainly wrong analysis,
+`UPRO` costed about 2.24*interest rate + 1.58% (annualized) to
+hold, in the sense that this is how much it lags behind it's
+stated objective. As of April 2019 this seems to be around
+6% to 7%, annualized.
 
 # UPRO
 `UPRO` is a leveraged ETF that promises 3x daily returns
